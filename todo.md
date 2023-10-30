@@ -29,3 +29,7 @@
 
     - adding font face
     - setting up colors
+
+
+
+- make this site fully working in next js 13 with backend api

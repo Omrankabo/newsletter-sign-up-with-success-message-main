@@ -141,9 +141,7 @@ label{
 .input:invalid{
     border-color: var(--primary);
 }
-.input:invalid > .error{
-    display: block !important;
-}
+
 .btn:hover{
     background: linear-gradient(to right, hsl(15, 100%, 67%) ,var(--primary));
     transition: .3s background linear;
