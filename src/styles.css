@@ -23,6 +23,7 @@
 body{
     background: var(--charcoal);
     font-family: Roboto;
+    overflow-x: hidden;
 }
 h1{
     color: var(--dark);
@@ -64,8 +65,8 @@ main{
 }
 /* ================== main style */
 .attribution{
-    position: absolute;
-    /* top: 16px; */
+    position: fixed;
+    top: 16px;
     left: 8px;
     height: 100%;
     text-align: center;
@@ -140,9 +141,71 @@ label{
 }
 .input:invalid{
     border-color: var(--primary);
+    background: hsla(4, 89%, 59%, 0.175);
+    color: var(--primary);
 }
+
 
 .btn:hover{
     background: linear-gradient(to right, hsl(15, 100%, 67%) ,var(--primary));
     transition: .3s background linear;
+}
+/* ================ success ===================== */
+.success_container{
+    background: var(--light);
+    padding: 2rem 3rem;
+    border-radius: 16px;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.success_container .title{
+    line-height: 56px;
+    margin-top: 1rem;
+}
+.success_container .desc{
+    line-height: 20px;
+}
+.success_content{
+    flex: 1;
+    padding-top: 3rem;
+}
+
+@media screen and (max-width:790px) {
+    .container{
+        flex-direction: column;
+        padding: 0%;
+        border-radius: 0%;
+        min-height: 100vh;
+    }
+    .imageContainer{
+        order: -1;
+    }
+    .textContainer{
+        padding: 2rem;
+    }
+    .title{
+        font-size: 46px;
+    }
+    .attribution{
+        writing-mode: horizontal-tb;
+        position: relative;
+        bottom: 0%;
+        left: 0%;
+        font-size: 14px;
+        padding: 1rem 0;
+    }
+    /* ======== success ========= */
+    .success_container {
+        min-height: 100vh ;
+        border-radius: 0%;
+        padding: 6rem 2rem;
+    }
+    .success_container .title{
+        font-size: 40px ;
+        line-height: 40px;
+        margin-top: 2rem;
+    }
 }
