@@ -45,27 +45,86 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
+I learnt how to display responsive images with pictuer tag, and tried to ues class instead of regular java script and i'm quite impressed with the result.
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<picture class="image_con">
+    <source media="(max-width:790px)" srcset="../assets/images/illustration-sign-up-mobile.svg">
+    <img src="../assets/images/illustration-sign-up-desktop.svg" alt="illustration to demonstrate all features we have showing screen, progress bar, and charts show success  " class="image" />
+</picture>
 ```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+class UI{
+    constructor(app){
+        this.app = app;
+        this.dismissButton;
+        this.submitButton;
+        this.submitFormContainer;
+        this.successMessage;
+        this.value = '';
+        this.state = 'inital';
+    }
+    CREATE_UI(){
+        if (this.state === 'inital') {
+            // contanier
+            this.submitFormContainer = document.createElement('article');
+            this.submitFormContainer.classList.add('container')
+            this.submitFormContainer.innerHTML = inital_page;
+            // form
+            this.form = this.submitFormContainer.querySelector('.input');
+            this.form.addEventListener('change',(e)=>{
+                this.value += e.target.value;
+                console.log(e.target.value);
+            })
+            // button
+            this.submitButton = this.submitFormContainer.querySelector('.submit');
+            this.submitButton.addEventListener('click',this.upload);
+            this.app.appendChild(this.submitFormContainer);
+            
+        }else if (this.state === 'success') {
+            this.successMessage = document.createElement('div')
+            this.successMessage.classList.add('success_container')
+            this.successMessage.innerHTML = succeessMassageCard;
+            // button
+            this.dismissButton =  this.successMessage.querySelector('.dismiss');
+            this.dismissButton.addEventListener('click',this.dismiss)
+            this.app.appendChild(this.successMessage)
+        }
+        
+    }
+    remove(){
+        if (this.state === 'inital') {
+            this.app.removeChild(this.successMessage)
+            
+        }else{
+            this.app.removeChild(this.submitFormContainer)
+        }
+        this.CREATE_UI();
+        
+    }
+    stateHandler(givenState){
+        this.state = givenState;
+    }
+    upload = (e)=>{
+        e.preventDefault()
+        if (this.value) {
+            this.stateHandler('success');
+            this.remove();
+            this.value = ''
+        }
+    }
+    dismiss =()=>{
+        this.stateHandler('inital')
+        this.remove()
+    }
 }
+
 ```
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+I will remake it with react or nextjs with an api to collect emails and make it further more like a real project.
 
 ## Author
 
