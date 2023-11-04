@@ -6,16 +6,16 @@ const inital_page = `<div class="textContainer">
 </p>
 <ul class="features">
   <li class="feature_item">
-    <img src="../assets/images/icon-list.svg" alt="" class="featuer_image" />
+    <img src="./assets/images/icon-list.svg" alt="" class="featuer_image" />
     
     Product discovery and building what matters
   </li>
   <li class="feature_item">
-    <img src="../assets/images/icon-list.svg" alt="" class="featuer_image" />
+    <img src="./assets/images/icon-list.svg" alt="" class="featuer_image" />
     Measuring to ensure updates are a success
   </li>
   <li class="feature_item">
-    <img src="../assets/images/icon-list.svg" alt="" class="featuer_image" />
+    <img src="./assets/images/icon-list.svg" alt="" class="featuer_image" />
     And much more!
   </li>
 </ul>
@@ -27,13 +27,13 @@ const inital_page = `<div class="textContainer">
 </div>
 <div class="imageContainer">
 <picture class="image_con">
-    <source media="(max-width:790px)" srcset="../assets/images/illustration-sign-up-mobile.svg">
-    <img src="../assets/images/illustration-sign-up-desktop.svg" alt="illustration to demonstrate all features we have showing screen, progress bar, and charts show success  " class="image" />
+    <source media="(max-width:790px)" srcset="./assets/images/illustration-sign-up-mobile.svg">
+    <img src="./assets/images/illustration-sign-up-desktop.svg" alt="illustration to demonstrate all features we have showing screen, progress bar, and charts show success  " class="image" />
 </picture>
 </div>`
 const succeessMassageCard = `<div class="success_content">
 <div class="success_image_container">
-  <img src="../assets/images/icon-success.svg" alt="success icon">
+  <img src="./assets/images/icon-success.svg" alt="success icon">
 </div>
 <h1 class="title">Thanks for subscribing!</h1>
 <p class="desc">
